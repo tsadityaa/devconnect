@@ -33,7 +33,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
 
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = 'https://devconnect-gui2.onrender.com/api';
 
   useEffect(() => {
     if (token) {
