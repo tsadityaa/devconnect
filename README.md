@@ -27,34 +27,38 @@ The frontend is built with **React.js**, styled using **TailwindCSS**, and the b
 
 ```bash
 git clone https://github.com/yourusername/devconnect.git
-cd devconnect
+
+
+
 2. Backend Setup
-bash
-Copy
-Edit
+
 cd server
 npm install
+
+
+
 Create a .env file in the server folder and add:
 
-env
-Copy
-Edit
+
+
+
 MONGODB_URI=mongodb+srv://tsaditya35:sPSyEOnNHWFDBqc6@firstproj.9bglr.mongodb.net/HelloWorld
 JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 PORT=5000
-Start the backend server:
 
-bash
-Copy
-Edit
+
+
+Start the backend server:
 npm run dev
+
+
 3. Frontend Setup
-bash
-Copy
-Edit
 cd ../
 npm install
 npm run dev
+
+
+
 💻 Key Features
 ✅ Authentication
 JWT-based secure login system
