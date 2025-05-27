@@ -21,7 +21,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onPostCreated }) => {
 
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/posts', {
+      const response = await fetch('https://devconnect-gui2.onrender.com/api/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
