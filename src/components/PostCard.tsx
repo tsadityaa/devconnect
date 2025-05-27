@@ -34,7 +34,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, onFollowChange }) => {
 
     setIsLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/users/${post.userId._id}/follow`, {
+      const response = await fetch(`https://devconnect-gui2.onrender.com/api/users/${post.userId._id}/follow`, {
         method: isFollowing ? 'DELETE' : 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
