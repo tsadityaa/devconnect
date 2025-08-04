@@ -7,7 +7,7 @@ const auth = require('../middleware/auth');
 
 const router = express.Router();
 
-// Create a new post
+
 router.post('/', auth, [
   body('text').trim().isLength({ min: 1, max: 280 }).withMessage('Post text must be between 1 and 280 characters')
 ], async (req, res) => {
