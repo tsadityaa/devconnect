@@ -89,7 +89,7 @@ router.post('/:userId/follow', auth, async (req, res) => {
   }
 });
 
-// Unfollow a user
+
 router.delete('/:userId/follow', auth, async (req, res) => {
   try {
     const { userId } = req.params;
