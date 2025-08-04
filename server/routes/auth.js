@@ -7,12 +7,12 @@ const auth = require('../middleware/auth');
 
 const router = express.Router();
 
-// Generate JWT token
+
 const generateToken = (userId) => {
   return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '7d' });
 };
 
-// Register user
+
 router.post('/register', [
   body('name').trim().isLength({ min: 1 }).withMessage('Name is required'),
   body('email').isEmail().withMessage('Please enter a valid email'),
@@ -32,11 +32,11 @@ router.post('/register', [
       return res.status(400).json({ message: 'User already exists with this email' });
     }
 
-    // Create new user
+    
     const user = new User({ name, email, password });
     await user.save();
 
-    // Generate token
+   
     const token = generateToken(user._id);
 
     res.status(201).json({
@@ -50,7 +50,7 @@ router.post('/register', [
   }
 });
 
-// Login user
+
 router.post('/login', [
   body('email').isEmail().withMessage('Please enter a valid email'),
   body('password').exists().withMessage('Password is required')
