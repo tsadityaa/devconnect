@@ -69,7 +69,7 @@ router.get('/timeline', auth, async (req, res) => {
   }
 });
 
-// Get posts by specific user
+
 router.get('/user/:userId', auth, async (req, res) => {
   try {
     const { userId } = req.params;
