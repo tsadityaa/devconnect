@@ -6,7 +6,7 @@ const auth = require('../middleware/auth');
 
 const router = express.Router();
 
-// Get all users (excluding current user)
+
 router.get('/', auth, async (req, res) => {
   try {
     console.log('Fetching users for explore page...');
@@ -95,12 +95,12 @@ router.delete('/:userId/follow', auth, async (req, res) => {
     const { userId } = req.params;
     const currentUserId = req.user._id;
 
-    // Remove from following list of current user
+    
     await User.findByIdAndUpdate(currentUserId, {
       $pull: { following: userId }
     });
 
-    // Remove from followers list of target user
+    
     await User.findByIdAndUpdate(userId, {
       $pull: { followers: currentUserId }
     });
